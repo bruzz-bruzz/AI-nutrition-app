@@ -1,4 +1,5 @@
 import express from 'express'
+import helmet from 'helmet'
 import userRoutes from './routes/Users'
 import dataRoutes from './routes/Data'
 import aiRoutes from './routes/AiModel'
@@ -11,6 +12,7 @@ const limiter = rateLimit({
 })
 const app = express()
 app.use(limiter)
+app.use(helmet)
 app.use('/users', userRoutes)
 app.use('/data',dataRoutes)
 app.use('/ai',aiRoutes)

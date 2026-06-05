@@ -72,8 +72,8 @@ router.post('/login',async(req:Request,res:Response)=>{
     res.cookie("token",token,
     {
         httpOnly:true,
-        secure:process.env.NODE_ENV === 'prodution' ? true : false,
-        sameSite:process.env.NODE_ENV === 'prodution' ? 'none' : 'strict',
+        secure:process.env.NODE_ENV === 'production' ? true : false,
+        sameSite:process.env.NODE_ENV === 'production' ? 'none' : 'strict',
         maxAge:1000 * 60 * 60 * 24 * 14
     })
     return res.status(200).json(uuid)
