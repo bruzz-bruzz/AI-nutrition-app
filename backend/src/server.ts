@@ -12,7 +12,7 @@ const limiter = rateLimit({
 })
 const app = express()
 app.use(limiter)
-app.use(helmet)
+app.use(helmet())
 app.use('/users', userRoutes)
 app.use('/data',dataRoutes)
 app.use('/ai',aiRoutes)
